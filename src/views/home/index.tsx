@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
-import { Container } from './styles';
+import TextField from '@material-ui/core/TextField';
+import Page from '../../components/page';
+import { Button, Container, SubTitle, Title } from './styles';
+
+
 
 const Home: React.FC = () => {
+  
   return (
-    <Container>
-      <h1>teste2</h1>
-      <h1>HOME</h1>
-    </Container>
+      <Page>
+        <Container>
+        <Title>Escutar muda <br/>tudo</Title>
+        <SubTitle>Milhões de músicas e podcasts para explorar. E nem precisa de cartão de crédito.</SubTitle>
+        <Button>BAIXE O SPOTIFY FREE</Button>
+      </Container>
+      </Page>
   )
 }
 

@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { Container } from './styles';
+import Page from '../../components/page';
 
 const Support: React.FC = () => {
-  return (
-    <Container>
-      <h1>teste2</h1>
-      <h1>Support</h1>
-    </Container>
+  return (    
+      <Page>
+        <Container>
+          
+        </Container>
+      </Page>
   )
 }
 

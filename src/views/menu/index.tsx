@@ -1,18 +1,27 @@
 import React from 'react';
+import { 
+  Header, 
+  Links,
+  Image,
+ } from './styles';
 import {
   BrowserRouter as Router,
-  Route,
   Switch,
+  Route,
 } from "react-router-dom";
 import { 
-  Home, Menu, SignUp, Support,
- } from './views';
+  Home,
+  SignUp,
+  Support,
+ } from '../../views';
 
-function App() {
+const Menu: React.FC = () => {
+  
   return (
     <Router>
+      
       <Switch>
-          <Route  path="/views/home/index.tsx">
+          <Route path="/views/home/index.tsx">
             {Home}
           </Route>
           <Route path="/views/signUp/index.tsx">
@@ -21,9 +30,9 @@ function App() {
           <Route path="/views/support/index.tsx">
             {Support}
           </Route>
-        </Switch>
+        </Switch>         
     </Router>
-  );
+  )
 }
 
-export default App;
+export default Menu;
