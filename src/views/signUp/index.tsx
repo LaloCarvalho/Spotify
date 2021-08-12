@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, ButtonFacebook, Container, Subtitle, TextDate, TextInput, Traco } from './styles';
+import { Button, ButtonFacebook, Check, Container, Dropdown, P, P2, P3, SublinhadoVerdeMaior, SublinhadoVerdeMenor, Subtitle, TextDate, TextInput, Traco } from './styles';
 import TextField from '@material-ui/core/TextField';
 import Page from '../../components/page';
 import logo from './assets/spotify.svg';
@@ -21,9 +21,9 @@ const SignUp: React.FC = () => {
         <TextInput id="outlined-basic" label="Confirme o Email" variant="outlined" /><br/><br/>
         <TextInput id="outlined-basic" label="Senha" variant="outlined" /><br/><br/>
         <TextInput id="outlined-basic" label="Apelido" variant="outlined" /><br/>
-        <p>Data de Nascimento:</p>
+        <P>Data de Nascimento:</P>
         <TextDate id="outlined-basic" label="Dia" variant="outlined" />
-        <Select
+        <Dropdown
           native
           label="Mês"
           variant="outlined"
@@ -42,36 +42,40 @@ const SignUp: React.FC = () => {
           <option value={10}>Outubro</option>
           <option value={20}>Novembro</option>
           <option value={30}>Dezembro</option>
-        </Select>
+        </Dropdown>
         <TextDate id="outlined-basic" label="Ano" variant="outlined" />
-        <p>Gênero:</p>
-        <FormControlLabel
+        <P>Gênero:</P>
+        <Check
         control={<Checkbox name="checkedA" />}
         label="Masculino"
       />
-      <FormControlLabel
+      <Check
         control={<Checkbox name="checkedA" />}
         label="Feminino"
       />
-      <FormControlLabel
+      <Check
         control={<Checkbox  name="checkedA" />}
         label="Não Binário"
       /><br/>
-      <FormControlLabel
+      <Check
         control={<Checkbox  name="checkedA" />}
         label="Não quero receber mensagens de marketing do Spotify"
       /><br/>
-      <FormControlLabel
+      <Check
         control={<Checkbox  name="checkedA" />}
         label="Compartilhar meus dados cadastrais com os provedores de conteúdo do Spotify para fins de marketing."
       /><br/>
-      <FormControlLabel
+      <Check
         control={<Checkbox  name="checkedA" />}
         label="Eu concordo com os Termos e Condições de Uso do Spotify."
       /><br/>
-      <p>Para saber mais sobre como o Spotify coleta, utiliza, compartilha e protege seus dados pessoais, leia a Política de Privacidade do Spotify.</p>
+      <P2>Para saber mais sobre como o Spotify coleta, utiliza, compartilha e protege seus dados pessoais, leia a 
+        <SublinhadoVerdeMenor>
+          Política de Privacidade do Spotify
+        </SublinhadoVerdeMenor>.
+      </P2>
       <Button>Inscrever-se</Button>
-      <p>Já tem uma conta? Faça login.</p>
+      <P3>Já tem uma conta? <SublinhadoVerdeMaior>Faça login</SublinhadoVerdeMaior>.</P3>
       </Container>
     </Page>
   )

@@ -5,7 +5,7 @@ import {
   Switch,
 } from "react-router-dom";
 import { 
-  Home, Menu, SignUp, Support,
+  Home, SignUp, Support,
  } from './views';
 
 function App() {
