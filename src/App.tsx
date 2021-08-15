@@ -4,24 +4,24 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import { 
+import {
   Home, SignUp, Support,
- } from './views';
+} from './views';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <Switch>
-          <Route  path="/views/home/index.tsx">
-            {Home}
-          </Route>
-          <Route path="/views/signUp/index.tsx">
-            {SignUp}
-          </Route>
-          <Route path="/views/support/index.tsx">
-            {Support}
-          </Route>
-        </Switch>
+        <Route exact path="/">
+          <Home/>
+        </Route>
+        <Route exact path="/signUp">
+          <SignUp/>
+        </Route>
+        <Route exact path="/support">
+          <Support/>
+        </Route>
+      </Switch>
     </Router>
   );
 }
