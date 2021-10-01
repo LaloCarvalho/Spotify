@@ -29,7 +29,7 @@ const page: React.FC = ({ children }) => {
       <LinksRight to="/">Baixar</LinksRight>
       <LinksRight to="/">|</LinksRight>
       <LinksRight to="/signUp">Inscrever-se</LinksRight>
-      <LinksRight to="/">Entrar</LinksRight>
+      <LinksRight to="/signIn">Entrar</LinksRight>
     </Header>
     {children}
     <Footer>
@@ -75,7 +75,7 @@ const page: React.FC = ({ children }) => {
         <H3>Sobre anúncios</H3>
         <P>
           Brasil<br />
-          2021 Spotify AB
+          2021 Spotify CD
         </P>
       </nav>
 

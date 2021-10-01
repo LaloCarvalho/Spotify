@@ -5,7 +5,7 @@ import {
   Switch,
 } from "react-router-dom";
 import {
-  Home, SignUp, Support,
+  Home, SignUp, Support, SignIn,
 } from './views';
 
 const App: React.FC = () => {
@@ -20,6 +20,9 @@ const App: React.FC = () => {
         </Route>
         <Route exact path="/support">
           <Support/>
+        </Route>
+        <Route exact path="/signIn">
+          <SignIn/>
         </Route>
       </Switch>
     </Router>
