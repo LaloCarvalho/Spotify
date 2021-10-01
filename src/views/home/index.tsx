@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         <Container>
         <Title>Escutar muda <br/>tudo</Title>
         <SubTitle>Milhões de músicas e podcasts para explorar. E nem precisa de cartão de crédito.</SubTitle>
-        <Button>BAIXE O SPOTIFY FREE</Button>
+        <Button>BAIXE O SPOTIFY</Button>
       </Container>
       </Page>
   )
