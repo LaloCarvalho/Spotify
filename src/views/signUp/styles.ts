@@ -98,6 +98,7 @@ export const SublinhadoVerdeMaior = styled.p`
   margin: 0;
   padding: 0;
   display: inline;
+  margin-left:150px;
 
   &:hover {
     color: #1ed760;

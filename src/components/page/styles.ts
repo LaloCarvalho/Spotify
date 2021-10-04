@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom";
 
 export const Container = styled.div`
+
 `;
 
 export const Header = styled.div`
@@ -11,7 +12,6 @@ export const Header = styled.div`
   padding-right: center;
   display: flex;
   align-items: center
-
 `;
 
 export const LinkHome = styled(Link)`

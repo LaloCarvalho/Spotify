@@ -7,6 +7,7 @@ import {
 import {
   Home, SignUp, Support, SignIn,
 } from './views';
+import OucaGratis from './views/oucaGratis';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,9 @@ const App: React.FC = () => {
         </Route>
         <Route exact path="/signIn">
           <SignIn/>
+        </Route>
+        <Route exact path="/oucaGratis">
+          <OucaGratis/>
         </Route>
       </Switch>
     </Router>
