@@ -1,6 +1,5 @@
 import reggae from './assets/imagens/reggae.jpg';
 import forro from './assets/imagens/forro.jpeg';
-// import samba from './assets/imagens/samba.jpg';
 import samba from './assets/imagens/samba.jpg';
 
 export const playLists = [
@@ -11,8 +10,11 @@ export const playLists = [
         musicas: [
             {
                 id: 1,
+                capa: forro,
+                estilo:'Forror',
                 nome: "Ê boi ê boi",
-                url: ""
+                url: "",
+                descricao:'alguma coisa vai fica aqui',
             }, 
             {
                 id: 2,

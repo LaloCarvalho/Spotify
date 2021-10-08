@@ -30,7 +30,9 @@ const App: React.FC = () => {
           <OucaGratis/>
         </Route>
         <Route exact path="/oucaGratis/:id">
-           
+          <OucaGratisDetalhes/>
+        </Route>
+        <Route exact path="/artista/:id">
           <OucaGratisDetalhes/>
         </Route>
       </Switch>

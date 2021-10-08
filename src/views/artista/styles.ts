@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -16,14 +15,4 @@ line-height: 36px;
 font-size: 32px;
 margin-top:0px;
 margin-left:500px;
-`;
-export const LinksRight = styled(Link)`
-  color: black;
-  font-size:18px;
-  margin-right:600px;
-
-  &:hover {
-    color: #1ed760;
-    cursor: pointer;
-}
 `;
