@@ -28,6 +28,10 @@ const App: React.FC = () => {
         <Route exact path="/oucaGratis">
           <OucaGratis/>
         </Route>
+        <Route exact path="/oucaGratis/:id">
+          {/* TODO */ }
+          <OucaGratisDetalhes/>
+        </Route>
       </Switch>
     </Router>
   );
