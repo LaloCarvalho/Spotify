@@ -9,28 +9,24 @@ import {
   Dropdown, 
   P, 
   P2, 
-  P3, 
+  P3,   
   Subtitle, 
   TextDate, 
   TextInput, 
-  Traco
 } from './styles';
 import Page from '../../components/page';
-import logo from './assets/spotify.svg';
-import { Image } from './styles';
-import { Checkbox } from '@material-ui/core';
+import { Checkbox} from '@material-ui/core';
 
 const SignUp: React.FC = () => {
 
   return (
     <Page>
       <Container>
-        <Image src={logo} alt="Logo" />
         <Subtitle>
           Inscreva-se grátis e comece a curtir.
         </Subtitle>
         <ButtonFacebook>Inscreva-se com o Facebook</ButtonFacebook>
-        <Traco></Traco>
+
         <TextInput id="outlined-basic" label="Email" variant="outlined" /><br /><br />
         <TextInput id="outlined-basic" label="Confirme o Email" variant="outlined" /><br /><br />
         <TextInput id="outlined-basic" label="Senha" variant="outlined" /><br /><br />

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -34,17 +35,15 @@ export const SubTitle = styled.p`
   text-align: center 
 `;
 
-export const Button = styled.button`
-  border-radius: 500px;
-  font-size: inherit;
-  padding: 14px 32px;
-  background-color: #1ed760;
-  color:#2941AB;
-  font-weight: bold;
-  text-align: center;
-  border: none;
+export const LinksRight = styled(Link)`
+border-radius: 500px;
+font-size: 50px;
+padding: 32px;
+background-color: #1ed760;
+font-weight: bold;
+text-align: center;
+border: none;
 
-  &:hover {
-    transform: scale(1.04);
-}
+&:hover {
+  transform: scale(1.04);
 `;

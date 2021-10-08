@@ -89,9 +89,10 @@ export const DivMid = styled.div`
 
 export const H3 = styled.h3`
   font-size: 24px;
+  text-align:center;
   display: inline;
-  padding-right: 100px;
-  margin-right:0;
+  padding-right: 50px;
+  margin-right:5px;
 `;
 
 export const H4 = styled.h4`
@@ -116,7 +117,7 @@ export const UL = styled.ul`
   text-align: left;
   margin: 0px;
   padding-top: 20px;
-  padding-right: 100px;
+  padding-right: 50px;
   display: inline-table;
 `;
 

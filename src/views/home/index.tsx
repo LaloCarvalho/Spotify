@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../components/page';
-import { Button, Container, SubTitle, Title } from './styles';
+import { Container,LinksRight,  SubTitle, Title } from './styles';
 
 
 
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         <Container>
         <Title>Escutar muda <br/>tudo</Title>
         <SubTitle>Milhões de músicas e podcasts para explorar. E nem precisa de cartão de crédito.</SubTitle>
-        <Button>BAIXE O SPOTIFY FREE</Button>
+        <LinksRight to="/oucaGratis">Ouça Gratis</LinksRight>
       </Container>
       </Page>
   )

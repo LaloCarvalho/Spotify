@@ -5,8 +5,9 @@ import {
   Switch,
 } from "react-router-dom";
 import {
-  Home, SignUp, Support,
+  Home, SignUp, Support, SignIn,
 } from './views';
+import OucaGratis from './views/oucaGratis';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,16 @@ const App: React.FC = () => {
         </Route>
         <Route exact path="/support">
           <Support/>
+        </Route>
+        <Route exact path="/signIn">
+          <SignIn/>
+        </Route>
+        <Route exact path="/oucaGratis">
+          <OucaGratis/>
+        </Route>
+        <Route exact path="/oucaGratis/:id">
+          {/* TODO */ }
+          <OucaGratisDetalhes/>
         </Route>
       </Switch>
     </Router>
