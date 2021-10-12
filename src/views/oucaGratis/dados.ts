@@ -1,17 +1,17 @@
-import reggae from './assets/imagens/reggae.jpg';
-import forro from './assets/imagens/forro.jpeg';
-import samba from './assets/imagens/samba.jpg';
+import Pop from './assets/imagens/pop.png';
+import Electronic from './assets/imagens/electronic.png';
+import Rock from './assets/imagens/rock.png';
 
 export const playLists = [
     {
-        id: 1,
-        nome: 'Forro',
-        capa: forro,
+        id: 0,
+        nome: 'Pop',
+        capa: Pop,
         musicas: [
             {
                 id: 1,
-                capa: forro,
-                estilo:'Forror',
+                capa: Pop,
+                estilo:'Pop',
                 nome: "Ê boi ê boi",
                 url: "",
                 descricao:'alguma coisa vai fica aqui',
@@ -29,14 +29,17 @@ export const playLists = [
         ]
     },
     {
-        id: 2,
-        nome: 'Reggae',
-        capa: reggae,
+        id: 1,
+        nome: 'Electronic',
+        capa: Electronic,
         musicas: [
             {
                 id: 1,
-                nome: "",
-                url: ""
+                capa: Electronic,
+                estilo:'Electronic',
+                nome: "Ê boi ê boi",
+                url: "",
+                descricao:'alguma coisa vai fica aqui',
             }, 
             {
                 id: 2,
@@ -50,14 +53,17 @@ export const playLists = [
             }
         ]
     }, {
-        id: 3,
-        nome: 'Samba',
-        capa: samba,
+        id: 2,
+        nome: 'Rock',
+        capa: Rock,
         musicas: [
             {
                 id: 1,
-                nome: "",
-                url: ""
+                capa: Rock,
+                estilo:'Rock',
+                nome: "Ê boi ê boi",
+                url: "",
+                descricao:'alguma coisa vai fica aqui',
             }, 
             {
                 id: 2,
