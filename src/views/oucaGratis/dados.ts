@@ -1,80 +1,74 @@
-import Pop from './assets/imagens/pop.png';
-import Electronic from './assets/imagens/electronic.png';
-import Rock from './assets/imagens/rock.png';
+import imagenPop from './assets/imagens/Pop.jpg';
+import imagenElectronic from './assets/imagens/Eletronic.jpg';
+import imagenRock from './assets/imagens/Rock.jpg';
 
 export const playLists = [
     {
         id: 0,
         nome: 'Pop',
-        capa: Pop,
+        capa: imagenPop,
         musicas: [
             {
                 id: 1,
-                capa: Pop,
+                capa: imagenPop,
+                artista:'juao',
                 estilo:'Pop',
+                musica:"./assets/musicas/STAY .mp3",
                 nome: "Ê boi ê boi",
-                url: "",
                 descricao:'alguma coisa vai fica aqui',
             }, 
             {
                 id: 2,
-                nome: "",
-                url: ""
+                artista:'juao2',
+                nome: "Ê boi ê boi",
+                descricao:'alguma coisa vai fica aqui',
+                musica:"./assets/musicas/STAY .mp3",
+
             },
-            {
-                id: 3,
-                nome: "",
-                url: ""
-            }
         ]
     },
     {
         id: 1,
         nome: 'Electronic',
-        capa: Electronic,
+        capa: imagenElectronic,
         musicas: [
             {
                 id: 1,
-                capa: Electronic,
+                capa: imagenElectronic,
                 estilo:'Electronic',
+                artista:'joao3',
                 nome: "Ê boi ê boi",
                 url: "",
                 descricao:'alguma coisa vai fica aqui',
+                musica:"./assets/musicas/STAY .mp3",
+
             }, 
             {
                 id: 2,
-                nome: "",
-                url: ""
+                artista:'joao4',
+                nome: "Ê boi ê boi",
+                url: "",
+                descricao:'alguma coisa vai fica aqui',
+                musica:"./assets/musicas/STAY .mp3",
+
             },
-            {
-                id: 3,
-                nome: "",
-                url: ""
-            }
         ]
     }, {
         id: 2,
         nome: 'Rock',
-        capa: Rock,
+        capa: imagenRock,
         musicas: [
             {
                 id: 1,
-                capa: Rock,
+                capa: imagenRock,
                 estilo:'Rock',
+                artista:'joao5',
                 nome: "Ê boi ê boi",
                 url: "",
                 descricao:'alguma coisa vai fica aqui',
+                musica:"./assets/musicas/STAY .mp3",
+
             }, 
-            {
-                id: 2,
-                nome: "",
-                url: ""
-            },
-            {
-                id: 3,
-                nome: "",
-                url: ""
-            }
         ]
     }
 ]

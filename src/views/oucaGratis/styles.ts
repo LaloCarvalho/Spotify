@@ -19,3 +19,9 @@ export const Img = styled.img`
   width:300px;
   margin-left: 50px;
 `;
+export const H1 = styled.p`
+line-height: 36px;
+font-size: 32px;
+margin-top:0px;
+margin-left:500px;
+`;
