@@ -1,72 +1,96 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
-  SublinhadoVerdeMaior, 
-  SublinhadoVerdeMenor, 
+  SublinhadoVerdeMaior,
+  SublinhadoVerdeMenor,
   Button,
-  ButtonFacebook, 
-  Check, 
-  Container, 
-  Dropdown, 
-  P, 
-  P2, 
-  P3,   
-  Subtitle, 
-  TextDate, 
-  TextInput, 
+  ButtonFacebook,
+  Check,
+  Container,
+  Dropdown,
+  P,
+  P2,
+  P3,
+  Subtitle,
+  TextDate,
+  TextInput,
 } from './styles';
 import Page from '../../components/page';
-import { Checkbox} from '@material-ui/core';
+import { Checkbox, FormControl, FormControlLabel, Radio, RadioGroup } from '@material-ui/core';
 
 const SignUp: React.FC = () => {
+  const [email, setEmail] = useState<string>()
+  const [confirmarEmail, setConfirmarEmail] = useState<boolean>()
+  const [senha, setSenha] = useState<string>()
+  const [apelido, setApelido] = useState<string>()
+  const [diaNascimento, setDiaNascimento] = useState<string>()
+  const [mesNascimento, setMesNascimento] = useState<string>()
+  const [anoNascimento, setAnoNascimento] = useState<string>()
+  const [genero, setGenero] = useState<string>()
+
+  function handleSubmit() {
+    const data = {
+      email,
+      confirmarEmail,
+      senha,
+      apelido,
+      nascimento: {
+        diaNascimento,
+        mesNascimento,
+        anoNascimento
+      },
+      genero
+    }
+    console.log(data)
+  }
 
   return (
     <Page>
       <Container>
-        <Subtitle>
-          Inscreva-se grátis e comece a curtir.
-        </Subtitle>
+        <Subtitle>Inscreva-se grátis e comece a curtir.</Subtitle>
         <ButtonFacebook>Inscreva-se com o Facebook</ButtonFacebook>
 
-        <TextInput id="outlined-basic" label="Email" variant="outlined" /><br /><br />
-        <TextInput id="outlined-basic" label="Confirme o Email" variant="outlined" /><br /><br />
-        <TextInput id="outlined-basic" label="Senha" variant="outlined" /><br /><br />
-        <TextInput id="outlined-basic" label="Apelido" variant="outlined" /><br />
+        <TextInput id="outlined-basic" label="Email" variant="outlined" onChange={e => setEmail(String(e.target.value))} /><br /><br />
+        <TextInput id="outlined-basic" label="Confirme o Email" variant="outlined" onChange={e => setConfirmarEmail(String(email) === String(e.target.value) ? true : false)} /><br /><br />
+        <TextInput id="outlined-basic" label="Senha" variant="outlined" onChange={e => setSenha(String(e.target.value))} /><br /><br />
+        <TextInput id="outlined-basic" label="Apelido" variant="outlined" onChange={e => setApelido(String(e.target.value))} /><br />
         <P>Data de Nascimento:</P>
-        <TextDate id="outlined-basic" label="Dia" variant="outlined" />
+        <TextDate id="outlined-basic" label="Dia" variant="outlined" onChange={e => setDiaNascimento(String(e.target.value))} />
         <Dropdown
           native
           label="Mês"
           variant="outlined"
           placeholder="Mês"
+          onChange={e => setMesNascimento(String(e.target.value))}
         >
           <option aria-label="None" value="" />
-          <option value={10}>Janeiro</option>
-          <option value={20}>Favereiro</option>
-          <option value={30}>Março</option>
-          <option value={10}>Abril</option>
-          <option value={20}>Maio</option>
-          <option value={30}>Junho</option>
-          <option value={10}>Julho</option>
-          <option value={20}>Agosto</option>
-          <option value={30}>Setembro</option>
-          <option value={10}>Outubro</option>
-          <option value={20}>Novembro</option>
-          <option value={30}>Dezembro</option>
+          <option value={"Janeiro"}>Janeiro</option>
+          <option value={"Fevereiro"}>Fevereiro</option>
+          <option value={"Março"}>Março</option>
+          <option value={"Abril"}>Abril</option>
+          <option value={"Maio"}>Maio</option>
+          <option value={"Junho"}>Junho</option>
+          <option value={"Julho"}>Julho</option>
+          <option value={"Agosto"}>Agosto</option>
+          <option value={"Setembro"}>Setembro</option>
+          <option value={"Outubro"}>Outubro</option>
+          <option value={"Novembro"}>Novembro</option>
+          <option value={"Dezembro"}>Dezembro</option>
         </Dropdown>
-        <TextDate id="outlined-basic" label="Ano" variant="outlined" />
+
+        <TextDate id="outlined-basic" label="Ano" variant="outlined" onChange={e => setAnoNascimento(String(e.target.value))}/>
         <P>Gênero:</P>
-        <Check
-          control={<Checkbox name="checkedA" />}
-          label="Masculino"
-        />
-        <Check
-          control={<Checkbox name="checkedA" />}
-          label="Feminino"
-        />
-        <Check
-          control={<Checkbox name="checkedA" />}
-          label="Não Binário"
-        /><br />
+        <FormControl component="fieldset">
+          <RadioGroup
+            aria-label="gender"
+            defaultValue="female"
+            name="radio-buttons-group"
+            onChange={e => setGenero(String(e.target.value))}
+          >
+            <FormControlLabel value="female" control={<Radio />} label="Feminino" />
+            <FormControlLabel value="male" control={<Radio />} label="Masculino" />
+            <FormControlLabel value="other" control={<Radio />} label="Não-binário" />
+          </RadioGroup>
+        </FormControl>
         <Check
           control={<Checkbox name="checkedA" />}
           label="Não quero receber mensagens de marketing do Spotify"
@@ -84,7 +108,7 @@ const SignUp: React.FC = () => {
             Política de Privacidade do Spotify
           </SublinhadoVerdeMenor>.
         </P2>
-        <Button>Inscrever-se</Button>
+        <Button onClick={handleSubmit}>Inscrever-se</Button>
         <P3>Já tem uma conta? <SublinhadoVerdeMaior>Faça login</SublinhadoVerdeMaior>.</P3>
       </Container>
     </Page>
