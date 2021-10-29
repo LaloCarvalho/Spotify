@@ -1,0 +1,31 @@
+{
+    "playlists": 
+    [
+        {
+            "id": 0,
+            "nome": "Pop",
+            "capa": "",
+            "musicas": [
+                {
+                    "id": 1,
+                    "capa": "",
+                    "artista":"juao",
+                    "estilo":"Pop",
+                    "musica":"./assets/musicas/STAY .mp3",
+                    "nome": "Ê boi ê boi",
+                    "descricao":"alguma coisa vai fica aqui"
+                }, 
+                {
+                    "id": 2,
+                    "artista":"juao",
+                    "nome": "Ê boi ê boi",
+                    "descricao":"alguma coisa vai fica aqui",
+                    "musica":"./assets/musicas/STAY .mp3"
+    
+                }
+            ]
+        }
+     
+    ],
+    "users": []
+}
