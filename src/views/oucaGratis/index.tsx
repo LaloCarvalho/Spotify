@@ -19,7 +19,7 @@ const OucaGratis: React.FC = () => {
 }
 export default OucaGratis;
 
-function mostrarLists(): React.ReactNode {
+function mostrarLists(){
     const res = playLists.map((p) => {
         return (
             <Link to={`/oucaGratis/${p.id}`}>
