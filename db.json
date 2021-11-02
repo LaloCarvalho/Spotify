@@ -27,5 +27,13 @@
         }
      
     ],
-    "users": []
+    "usuarios": [
+        {
+            "id":1,
+            "nome":"Caio",
+            "email":"Caiobarroso511@yahoo.com.br",
+            "senha":"1234"
+        }
+
+    ]
 }
