@@ -1,57 +1,53 @@
 {
-    "playlists": 
-    [
+  "playlists": [
+    {
+      "id": 0,
+      "nome": "Pop",
+      "capa": "",
+      "musicas": [
         {
-            "id": 0,
-            "nome": "Pop",
-            "capa": "",
-            "musicas": [
-                {
-                    "id": 1,
-                    "capa": "",
-                    "artista":"juao",
-                    "estilo":"Pop",
-                    "musica":"/Atomic Music.mp3",
-                    "nome": "teste",
-                    "descricao":"alguma coisa vai fica aqui"
-                }, 
-                {
-                    "id": 2,
-                    "artista":"juao",
-                    "nome": "alow",
-                    "descricao":"alguma coisa vai fica aqui",
-                    "musica":"/Atomic Music.mp3"
-    
-                },
-                {
-                    "id": 3,
-                    "capa": "",
-                    "artista":"juao",
-                    "estilo":"Pop",
-                    "musica":"/Atomic Music.mp3",
-                    "nome": "oi",
-                    "descricao":"alguma coisa vai fica aqui"
-                }, 
-                {
-                    "id": 4,
-                    "capa": "",
-                    "artista":"juao",
-                    "estilo":"Pop",
-                    "musica":"/Atomic Music.mp3",
-                    "nome": "ola",
-                    "descricao":"alguma coisa vai fica aqui"
-                }
-            ]
-        }
-     
-    ],
-    "usuarios": [
+          "id": 1,
+          "capa": "",
+          "artista": "juao",
+          "estilo": "Pop",
+          "musica": "/Atomic Music.mp3",
+          "nome": "teste",
+          "descricao": "alguma coisa vai fica aqui"
+        },
         {
-            "id":1,
-            "nome":"Caio",
-            "email":"Caiobarroso511@yahoo.com.br",
-            "senha":"1234"
+          "id": 2,
+          "artista": "juao",
+          "nome": "alow",
+          "descricao": "alguma coisa vai fica aqui",
+          "musica": "/Atomic Music.mp3"
+        },
+        {
+          "id": 3,
+          "capa": "",
+          "artista": "juao",
+          "estilo": "Pop",
+          "musica": "/Atomic Music.mp3",
+          "nome": "oi",
+          "descricao": "alguma coisa vai fica aqui"
+        },
+        {
+          "id": 4,
+          "capa": "",
+          "artista": "juao",
+          "estilo": "Pop",
+          "musica": "/Atomic Music.mp3",
+          "nome": "ola",
+          "descricao": "alguma coisa vai fica aqui"
         }
-
-    ]
+      ]
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Caio",
+      "email": "Caiobarroso511@yahoo.com.br",
+      "senha": "1234"
+    }
+  ]
 }

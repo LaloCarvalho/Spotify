@@ -11,6 +11,7 @@ import {
   Title,
   Musica,
   TextInput,
+  Button,
 } from './styles';
 
 const Profile: React.FC = () => {
@@ -40,6 +41,15 @@ const Profile: React.FC = () => {
   if (!isLogged && canChange) {
     return (<Redirect to='/signin' />);
   }
+  let id = 4;
+  const DeleteMusic = () => {
+    axios.delete('http://localhost:4000/playlists/musicas/1')
+    .then(resp => {
+      console.log(resp.data)
+    }).catch(error => {
+      console.log(error);
+    });
+  }
 
   return (
     <Container isLogged={!!userLogged}>
@@ -63,7 +73,7 @@ const Profile: React.FC = () => {
                   p.musicas && p.musicas.filter(w => w.nome.includes(filter)).map((m) =>
                     <Musica>
                       {m.nome} - {m.artista}<br/>
-                      <ReactAudioPlayer src={m.musica} controls /> 
+                      <ReactAudioPlayer src={m.musica} controls /> <Button onClick={DeleteMusic}>Excluir Música da Playlist</Button>
                     </Musica>
                   )
                 }

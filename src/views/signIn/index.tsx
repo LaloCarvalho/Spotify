@@ -78,7 +78,7 @@ const SignIn: React.FC = () => {
           <ButtonEntrar>Entrar</ButtonEntrar>
         </form>
         <u></u>
-        <H2>Não tem uma conta?</H2>
+        <H2>Não tem uma conta?</H2><br/>
         <ButtonApple>Inscrever-se no Spotify</ButtonApple>
       </Container>
     </Page>

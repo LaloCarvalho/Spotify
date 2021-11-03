@@ -10,10 +10,8 @@ export const Container = styled.div`
 export const H2 = styled.h2`
   padding: 10px;
   font-weight: bold;
-  text-align: center;
   font-size: 20px;
   margin-top: 3px;
-  margin-left:55px;
 `;
 
 export const ButtonFacebook = styled.button`
@@ -43,7 +41,7 @@ export const ButtonGoogle = styled.button`
   font-weight: bold;
   text-align: center;  
   border-color: Black;
-  margin-right: 100px;
+  margin-right: 50px;
   cursor: pointer;
 
   &:hover {
@@ -95,13 +93,22 @@ export const u = styled.u`
 `;
 
 export const ButtonEntrar = styled.button`
-  background-color: Green;
-  width: 100px;
+  
   border-radius: 100px;
-  border-style: none;
-  margin-left: 350px;
-  padding:13px;
-  font-size: 18px;
+  font-size: inherit;
+  padding: 20px;
+  background-color: #1ed760;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  margin-top: 15px;
+  margin-left:150px;
+  
+
+  &:hover {
+    transform: scale(1.04);
+}
 `;
 
 export const ButtonInscrever = styled.button`

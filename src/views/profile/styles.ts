@@ -33,3 +33,20 @@ export const TextInput = styled(TextField)`
   margin-top: 558px;
   width: 450px;
 `;
+
+export const Button = styled.button`
+  border-radius: 100px;
+  font-size: inherit;
+  padding: 20px;
+  background-color: #1ed760;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  margin-left:15px;
+  
+
+  &:hover {
+    transform: scale(1.04);
+}
+`;
