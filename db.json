@@ -11,17 +11,35 @@
                     "capa": "",
                     "artista":"juao",
                     "estilo":"Pop",
-                    "musica":"./assets/musicas/STAY .mp3",
-                    "nome": "Ê boi ê boi",
+                    "musica":"/Atomic Music.mp3",
+                    "nome": "teste",
                     "descricao":"alguma coisa vai fica aqui"
                 }, 
                 {
                     "id": 2,
                     "artista":"juao",
-                    "nome": "Ê boi ê boi",
+                    "nome": "alow",
                     "descricao":"alguma coisa vai fica aqui",
-                    "musica":"./assets/musicas/STAY .mp3"
+                    "musica":"/Atomic Music.mp3"
     
+                },
+                {
+                    "id": 3,
+                    "capa": "",
+                    "artista":"juao",
+                    "estilo":"Pop",
+                    "musica":"/Atomic Music.mp3",
+                    "nome": "oi",
+                    "descricao":"alguma coisa vai fica aqui"
+                }, 
+                {
+                    "id": 4,
+                    "capa": "",
+                    "artista":"juao",
+                    "estilo":"Pop",
+                    "musica":"/Atomic Music.mp3",
+                    "nome": "ola",
+                    "descricao":"alguma coisa vai fica aqui"
                 }
             ]
         }

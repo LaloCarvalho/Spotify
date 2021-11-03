@@ -49,12 +49,12 @@ const SignUp: React.FC = () => {
         <Subtitle>Inscreva-se grátis e comece a curtir.</Subtitle>
         <ButtonFacebook>Inscreva-se com o Facebook</ButtonFacebook>
 
-        <TextInput id="outlined-basic" label="Email" variant="outlined" onChange={e => setEmail(String(e.target.value))} /><br /><br />
-        <TextInput id="outlined-basic" label="Confirme o Email" variant="outlined" onChange={e => setConfirmarEmail(String(email) === String(e.target.value) ? true : false)} /><br /><br />
-        <TextInput id="outlined-basic" label="Senha" variant="outlined" onChange={e => setSenha(String(e.target.value))} /><br /><br />
-        <TextInput id="outlined-basic" label="Apelido" variant="outlined" onChange={e => setApelido(String(e.target.value))} /><br />
+        <TextInput label="Email" variant="outlined" onChange={e => setEmail(String(e.target.value))} /><br /><br />
+        <TextInput label="Confirme o Email" variant="outlined" onChange={e => setConfirmarEmail(String(email) === String(e.target.value) ? true : false)} /><br /><br />
+        <TextInput label="Senha" variant="outlined" onChange={e => setSenha(String(e.target.value))} /><br /><br />
+        <TextInput label="Apelido" variant="outlined" onChange={e => setApelido(String(e.target.value))} /><br />
         <P>Data de Nascimento:</P>
-        <TextDate id="outlined-basic" label="Dia" variant="outlined" onChange={e => setDiaNascimento(String(e.target.value))} />
+        <TextDate label="Dia" variant="outlined" onChange={e => setDiaNascimento(String(e.target.value))} />
         <Dropdown
           native
           label="Mês"
@@ -77,7 +77,7 @@ const SignUp: React.FC = () => {
           <option value={"Dezembro"}>Dezembro</option>
         </Dropdown>
 
-        <TextDate id="outlined-basic" label="Ano" variant="outlined" onChange={e => setAnoNascimento(String(e.target.value))}/>
+        <TextDate label="Ano" variant="outlined" onChange={e => setAnoNascimento(String(e.target.value))}/>
         <P>Gênero:</P>
         <FormControl component="fieldset">
           <RadioGroup

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-
 `;
 
 export const Header = styled.div`
@@ -11,7 +10,7 @@ export const Header = styled.div`
   text-align: center;
   padding-right: center;
   display: flex;
-  align-items: center
+  align-items: center;
 `;
 
 export const LinkHome = styled(Link)`
@@ -29,7 +28,7 @@ export const LinksRight = styled(Link)`
   &:hover {
     color: #1ed760;
     cursor: pointer;
-}
+  }
 `;
 
 export const Footer = styled.div`
@@ -109,4 +108,16 @@ export const H3 = styled.h3`
 }
 `;
 
+export const Button = styled.a`
+  display:flex;
+  color: white;
+  font-weight:bold;
+  margin-left: 35px;
+  text-decoration: none;
+  font-size: 18px;
 
+  &:hover {
+    color: #1ed760;
+    cursor: pointer;
+  }
+`;

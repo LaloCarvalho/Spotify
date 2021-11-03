@@ -5,7 +5,7 @@ import {
   Switch,
 } from "react-router-dom";
 import {
-  Home, SignUp, Support, SignIn,
+  Home, SignUp, Support, SignIn, Profile,
 } from './views';
 import OucaGratis from './views/oucaGratis/';
 import OucaGratisDetalhes from './views/oucaGratisDetalhes/';
@@ -15,25 +15,28 @@ const App: React.FC = () => {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
         <Route exact path="/signUp">
-          <SignUp/>
+          <SignUp />
         </Route>
         <Route exact path="/support">
-          <Support/>
+          <Support />
         </Route>
         <Route exact path="/signIn">
-          <SignIn/>
+          <SignIn />
         </Route>
         <Route exact path="/oucaGratis">
-          <OucaGratis/>
+          <OucaGratis />
         </Route>
         <Route exact path="/oucaGratis/:id">
-          <OucaGratisDetalhes/>
+          <OucaGratisDetalhes />
         </Route>
         <Route exact path="/artista/:id">
-          <OucaGratisDetalhes/>
+          <OucaGratisDetalhes />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
         </Route>
       </Switch>
     </Router>

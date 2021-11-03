@@ -8,12 +8,12 @@ export const Container = styled.div`
   text-align: rigth;
 `;
 export const H2 = styled.h2`
-padding: 10px;
-font-weight: bold;
-text-align: center;
-font-size: 20px;
-margin-top: 3px;
-margin-left:55px;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 3px;
+  margin-left:55px;
 `;
 
 export const ButtonFacebook = styled.button`
@@ -25,11 +25,12 @@ export const ButtonFacebook = styled.button`
   font-weight: bold;
   text-align: center;  
   border-color: Black;
-  margin-rigth: 100px;
+  margin-right: 100px;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.04);
-}
+  }
 `;
 
 export const ButtonGoogle = styled.button`
@@ -42,11 +43,12 @@ export const ButtonGoogle = styled.button`
   font-weight: bold;
   text-align: center;  
   border-color: Black;
-  margin-rigth: 100px;
+  margin-right: 100px;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.04);
-}
+  }
 `;
 
 export const ButtonApple = styled.button`
@@ -59,7 +61,8 @@ export const ButtonApple = styled.button`
   font-weight: bold;
   text-align: center;  
   border-color: Black;
-  margin-rigth: 100px;
+  margin-right: 100px;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.04);
@@ -67,17 +70,17 @@ export const ButtonApple = styled.button`
 `;
 
 export const Linha = styled.h1`
-font-weight: inherit;
-text-align: center;
-font-size: 15px;
-margin-top: 20px;
+  font-weight: inherit;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 20px;
 `;
 
 export const H1 = styled.h1`
-font-weight: inherit;
-text-align: left;
-font-size: 15px;
-margin-top: 3px;
+  font-weight: inherit;
+  text-align: left;
+  font-size: 15px;
+  margin-top: 3px;
 `;
 
 export const TextInput = styled(TextField)`
@@ -85,20 +88,20 @@ export const TextInput = styled(TextField)`
   width: 450px;
 `;
 export const u = styled.u`
-font-weight: inherit;
-text-align: left;
-font-size: 15px;
-margin-top: 3px;
+  font-weight: inherit;
+  text-align: left;
+  font-size: 15px;
+  margin-top: 3px;
 `;
 
-export const ButtonEntrar=styled.button`
-background-color: Green;
-width: 100px;
-border-radius: 100px;
-border-style: none;
-margin-left: 350px;
-padding:13px;
-font-size: 18px;
+export const ButtonEntrar = styled.button`
+  background-color: Green;
+  width: 100px;
+  border-radius: 100px;
+  border-style: none;
+  margin-left: 350px;
+  padding:13px;
+  font-size: 18px;
 `;
 
 export const ButtonInscrever = styled.button`
@@ -110,7 +113,7 @@ export const ButtonInscrever = styled.button`
   font-weight: bold;
   text-align: center;  
   border-color: Black;
-  margin-rigth: 100px;
+  margin-right: 100px;
 
   &:hover {
     transform: scale(1.04);
