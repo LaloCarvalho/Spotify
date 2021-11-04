@@ -30,6 +30,8 @@ interface PlaylistContainerProps {
 
 export const PlaylistDiv = styled.div.attrs((props: PlaylistContainerProps) => { })`
     background-color: ${props => props.isSelected ? '#1ed760' : '#fff'};
+    color: ${props => props.isSelected ? '#fff' : '#000'};
+    font-weight: ${props => props.isSelected ? 'bold' : 'light'};
     margin: 10px;
     border: solid 1px #ccc;
     border-radius: 3px;
@@ -38,7 +40,7 @@ export const PlaylistDiv = styled.div.attrs((props: PlaylistContainerProps) => {
     height: 200px;
     cursor: pointer;
     border-radius: 30px;
-    font-size: 24px;
+    font-size: 22px;
 `;
 
 export const MusicaDiv = styled.div`
@@ -91,4 +93,19 @@ export const CapaPlaylist = styled.img`
   background-color: #fff;
   border-radius: 30px;
   cursor: pointer;
+`;
+
+export const ImageAddMusic = styled.img`
+  height: 40px;
+  margin-left: 20px;
+  background-color: #fff;
+  border-radius: 30%;
+  cursor: pointer;
+`;
+
+export const Table = styled.table`
+  border: 1px solid #efefef;
+  width: 50% !important;
+  margin: auto;
+  margin-bottom: 20px;
 `;

@@ -19,7 +19,9 @@ import {
   Image,
   TextInputMusic,
   DivNewMusic,
-  CapaPlaylist
+  CapaPlaylist,
+  ImageAddMusic,
+  Table
 } from './styles';
 
 const Profile: React.FC = () => {
@@ -34,7 +36,7 @@ const Profile: React.FC = () => {
   const [musicaAtualDet, setMusicaAtualDet] = useState<Musica | null>(null);
   const [artista, setArtista] = useState<string>();
   const [descricao, setdescricao] = useState<string>();
-  const [musica, setmusica] = useState<string>("/Atomic Music.mp3");
+  const [musica, setmusica] = useState<string>("https://www.youtube.com/watch?v=5qap5aO4i9A");
   const [nome, setnome] = useState<string>();
   const [estilo, setEstilo] = useState<string>();
   const [totalMusics, setTotalMusics] = useState<Array<Musica>>();
@@ -154,13 +156,13 @@ const Profile: React.FC = () => {
         </PlaylistContainer>
         {playlistSelected && (
           <div>
-            <Title>
-              Músicas da playlist {playlistSelected.nome}
-            </Title>
-            <Image src={add} onClick={() => {
-              setAddMusic(true);
-            }} alt="Adcionar Música a Playlist"
-            />
+              <Title>
+                Músicas da playlist {playlistSelected.nome}
+              </Title>
+              <ImageAddMusic src={add} onClick={() => {
+                setAddMusic(true);
+              }} alt="Adcionar Música a Playlist"
+              />
             {addMusic &&
               <DivNewMusic>
                 <TextInputMusic
@@ -218,7 +220,26 @@ const Profile: React.FC = () => {
               </DivNewMusic>}
             {musicaAtualDet && (
               <MusicaDiv>
-                <h2>Música {musicaAtualDet.nome} por {musicaAtualDet.artista} ({musicaAtual}/{musicasNaPlaylist?.length})</h2>
+                <Table className="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Música</th>
+                      <th scope="col">Artista</th>
+                      <th scope="col">Estilo</th>
+                      <th scope="col">Descrição</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{musicaAtualDet.nome}</td>
+                      <td>{musicaAtualDet.artista}</td>
+                      <td>{musicaAtualDet.estilo}</td>
+                      <td>{musicaAtualDet.descricao}</td>
+                      <td>({musicaAtual}/{musicasNaPlaylist?.length})</td>
+                    </tr>
+                  </tbody>
+                </Table>
                 <Image src={backward} onClick={lastSound} alt="Voltar" />
                 <ReactAudioPlayer src={musicaAtualDet.musica} controls />
                 <Image src={forward} onClick={nextSound} alt="Avançar" />
