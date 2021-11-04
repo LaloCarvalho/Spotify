@@ -155,7 +155,7 @@ const Profile: React.FC = () => {
         {playlistSelected && (
           <div>
             <Title>
-              Músicas da playlist selecionada
+              Músicas da playlist {playlistSelected.nome}
             </Title>
             <Image src={add} onClick={() => {
               setAddMusic(true);
@@ -218,7 +218,7 @@ const Profile: React.FC = () => {
               </DivNewMusic>}
             {musicaAtualDet && (
               <MusicaDiv>
-                <h2>Música {musicaAtualDet.nome} por {musicaAtualDet.artista} ({musicaAtual}/{musicasNaPlaylist?.length})</h2><br />
+                <h2>Música {musicaAtualDet.nome} por {musicaAtualDet.artista} ({musicaAtual}/{musicasNaPlaylist?.length})</h2>
                 <Image src={backward} onClick={lastSound} alt="Voltar" />
                 <ReactAudioPlayer src={musicaAtualDet.musica} controls />
                 <Image src={forward} onClick={nextSound} alt="Avançar" />
