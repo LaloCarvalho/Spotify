@@ -62,15 +62,14 @@
       "musicId": 6
     },
     {
-      "id": 7,
       "playlistId": 3,
-      "musicId": 7
+      "musicId": 7,
+      "id": 7
     }
   ],
   "musicas": [
     {
       "id": 1,
-      "capa": "",
       "artista": "João",
       "estilo": "Pop",
       "musica": "/Atomic Music.mp3",
@@ -79,7 +78,6 @@
     },
     {
       "id": 2,
-      "capa": "",
       "artista": "Pedro",
       "estilo": "Pop",
       "musica": "/Atomic Music.mp3",
@@ -88,7 +86,6 @@
     },
     {
       "id": 3,
-      "capa": "",
       "artista": "Maria",
       "estilo": "Pop",
       "musica": "/Atomic Music.mp3",
@@ -97,7 +94,6 @@
     },
     {
       "id": 4,
-      "capa": "",
       "artista": "Gabriel",
       "estilo": "Eletrônico",
       "musica": "/Atomic Music.mp3",
@@ -106,7 +102,6 @@
     },
     {
       "id": 5,
-      "capa": "",
       "artista": "Isabela",
       "estilo": "Eletrônico",
       "musica": "/Atomic Music.mp3",
@@ -115,7 +110,6 @@
     },
     {
       "id": 6,
-      "capa": "",
       "artista": "Joana",
       "estilo": "Eletrônico",
       "musica": "/Atomic Music.mp3",
@@ -123,13 +117,12 @@
       "descricao": "alguma coisa vai fica aqui"
     },
     {
-      "id": 7,
-      "capa": "",
       "artista": "Antonio",
-      "estilo": "Rock",
+      "descricao": "Rock",
       "musica": "/Atomic Music.mp3",
       "nome": "Música Rock 1",
-      "descricao": "alguma coisa vai fica aqui"
+      "estilo": "Rock",
+      "id": 7
     }
   ]
 }

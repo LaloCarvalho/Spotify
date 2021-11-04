@@ -12,7 +12,6 @@ export interface Musica {
     musica: string,
     nome: string,
     estilo: string,
-    capa: string,
 }
 
 export interface Playlist {

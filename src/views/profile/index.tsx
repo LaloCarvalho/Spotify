@@ -51,8 +51,6 @@ const Profile: React.FC = () => {
     axios.get('http://localhost:4000/musicas')
       .then(res => {
         setTotalMusics(res.data);
-        console.log("totalMusics");
-        console.log(totalMusics);
       });
   }
 
@@ -91,8 +89,6 @@ const Profile: React.FC = () => {
   }
 
   useEffect(() => {
-    console.log('playlistSelected');
-    console.log(playlistSelected);
     if (playlistSelected) {
       setMusicaAtualDet(null);
       setMusicaAtual(0);
@@ -101,8 +97,6 @@ const Profile: React.FC = () => {
   }, [playlistSelected]);
 
   useEffect(() => {
-    console.log('musicasNaPlaylist');
-    console.log(musicasNaPlaylist);
     if (musicasNaPlaylist && musicasNaPlaylist.length > 0) {
       setMusicaAtual(1);
     }
@@ -115,7 +109,7 @@ const Profile: React.FC = () => {
 
   useEffect(() => {
     getTotalMusics();
-  }, [])
+  }, [addMusic])
 
   useEffect(() => {
     let usuarioLogado = localStorage.getItem('user-logged-in');
@@ -204,18 +198,21 @@ const Profile: React.FC = () => {
                     musica: musica,
                     nome: nome,
                     estilo: estilo,
-                    capa: "",
                   }).then(resp => {
                     axios.post('http://localhost:4000/playlistMusica', {
                       playlistId: playlistSelected.id,
                       musicId: totalMusics?.length! + 1,
-                    }).finally(() => {
-                      getTotalMusics();
-                    });
+                    })
+                    setMusicaAtual(0);
+                    setMusicaAtualDet(null);
+                    
+                    //getTotalMusics();
                     getMusicsFromPlaylist();
                     setAddMusic(false);
                   }).catch(error => {
                     console.log(error);
+                  }).finally(() => {
+                    
                   });
                 }}>Adcionar Música a Playlist</Button>
               </DivNewMusic>}
@@ -229,7 +226,6 @@ const Profile: React.FC = () => {
                   axios.delete('http://localhost:4000/playlistMusica/' + musicaAtualDet.id)
                   .then(resp => {
                     axios.delete('http://localhost:4000/musicas/' + musicaAtualDet.id)
-                    console.log(resp.data);
                     setMusicaAtual(0);
                     setMusicaAtualDet(null);
                     getMusicsFromPlaylist();
