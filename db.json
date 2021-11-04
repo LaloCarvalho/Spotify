@@ -1,53 +1,135 @@
 {
-  "playlists": [
-    {
-      "id": 0,
-      "nome": "Pop",
-      "capa": "",
-      "musicas": [
-        {
-          "id": 1,
-          "capa": "",
-          "artista": "juao",
-          "estilo": "Pop",
-          "musica": "/Atomic Music.mp3",
-          "nome": "teste",
-          "descricao": "alguma coisa vai fica aqui"
-        },
-        {
-          "id": 2,
-          "artista": "juao",
-          "nome": "alow",
-          "descricao": "alguma coisa vai fica aqui",
-          "musica": "/Atomic Music.mp3"
-        },
-        {
-          "id": 3,
-          "capa": "",
-          "artista": "juao",
-          "estilo": "Pop",
-          "musica": "/Atomic Music.mp3",
-          "nome": "oi",
-          "descricao": "alguma coisa vai fica aqui"
-        },
-        {
-          "id": 4,
-          "capa": "",
-          "artista": "juao",
-          "estilo": "Pop",
-          "musica": "/Atomic Music.mp3",
-          "nome": "ola",
-          "descricao": "alguma coisa vai fica aqui"
-        }
-      ]
-    }
-  ],
   "usuarios": [
     {
       "id": 1,
       "nome": "Caio",
       "email": "Caiobarroso511@yahoo.com.br",
       "senha": "1234"
+    },
+    {
+      "id": 2,
+      "nome": "Eduardo",
+      "email": "eduardocdiogenes@gmail.com",
+      "senha": "123"
+    }
+  ],
+  "playlists": [
+    {
+      "id": 1,
+      "nome": "Pop",
+      "capa": ""
+    },
+    {
+      "id": 2,
+      "nome": "Eletrônico",
+      "capa": ""
+    },
+    {
+      "id": 3,
+      "nome": "Rock",
+      "capa": ""
+    }
+  ],
+  "playlistMusica": [
+    {
+      "id": 1,
+      "playlistId": 1,
+      "musicId": 1
+    },
+    {
+      "id": 2,
+      "playlistId": 1,
+      "musicId": 2
+    },
+    {
+      "id": 3,
+      "playlistId": 1,
+      "musicId": 3
+    },
+    {
+      "id": 4,
+      "playlistId": 2,
+      "musicId": 4
+    },
+    {
+      "id": 5,
+      "playlistId": 2,
+      "musicId": 5
+    },
+    {
+      "id": 6,
+      "playlistId": 2,
+      "musicId": 6
+    },
+    {
+      "id": 7,
+      "playlistId": 3,
+      "musicId": 7
+    }
+  ],
+  "musicas": [
+    {
+      "id": 1,
+      "capa": "",
+      "artista": "João",
+      "estilo": "Pop",
+      "musica": "/Atomic Music.mp3",
+      "nome": "Música pop 1",
+      "descricao": "alguma coisa vai fica aqui"
+    },
+    {
+      "id": 2,
+      "capa": "",
+      "artista": "Pedro",
+      "estilo": "Pop",
+      "musica": "/Atomic Music.mp3",
+      "nome": "Música pop 2",
+      "descricao": "alguma coisa vai fica aqui"
+    },
+    {
+      "id": 3,
+      "capa": "",
+      "artista": "Maria",
+      "estilo": "Pop",
+      "musica": "/Atomic Music.mp3",
+      "nome": "Música pop 3",
+      "descricao": "alguma coisa vai fica aqui"
+    },
+    {
+      "id": 4,
+      "capa": "",
+      "artista": "Gabriel",
+      "estilo": "Eletrônico",
+      "musica": "/Atomic Music.mp3",
+      "nome": "Música Eletrônica 1",
+      "descricao": "alguma coisa vai fica aqui"
+    },
+    {
+      "id": 5,
+      "capa": "",
+      "artista": "Isabela",
+      "estilo": "Eletrônico",
+      "musica": "/Atomic Music.mp3",
+      "nome": "Música Eletrônica 2",
+      "descricao": "alguma coisa vai fica aqui"
+    },
+    {
+      "id": 6,
+      "capa": "",
+      "artista": "Joana",
+      "estilo": "Eletrônico",
+      "musica": "/Atomic Music.mp3",
+      "nome": "Música Eletrônica 3",
+      "descricao": "alguma coisa vai fica aqui"
+    },
+    {
+      "id": 7,
+      "capa": "",
+      "artista": "Antonio",
+      "estilo": "Rock",
+      "musica": "/Atomic Music.mp3",
+      "nome": "Música Rock 1",
+      "descricao": "alguma coisa vai fica aqui"
     }
   ]
 }

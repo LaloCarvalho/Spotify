@@ -11,11 +11,18 @@ export interface Musica {
     id: number,
     musica: string,
     nome: string,
+    estilo: string,
+    capa: string,
 }
 
 export interface Playlist {
     capa: string,
     id: number,
-    musicas: Array<Musica>,
     nome: string,
+}
+
+export interface PlaylistMusica {
+    id: number,
+    playlistId: number,
+    musicId: number,
 }

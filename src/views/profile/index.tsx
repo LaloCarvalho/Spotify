@@ -2,16 +2,25 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import { Redirect, useParams } from 'react-router';
-import { Usuario, Playlist } from '../../utils/types';
+import { Usuario, Playlist, PlaylistMusica, Musica } from '../../utils/types';
+import backward from './assets/backward.png';
+import forward from './assets/forward.png';
+import deleteMusic from './assets/delete.png';
+import add from './assets/add.png';
+import Alert from '@material-ui/lab/Alert';
+import AlertTitle from '@material-ui/lab/AlertTitle';
 import {
   Container,
   InnerContainer,
   PlaylistDiv,
   PlaylistContainer,
   Title,
-  Musica,
+  MusicaDiv,
   TextInput,
   Button,
+  Image,
+  TextInputMusic,
+  DivNewMusic
 } from './styles';
 
 const Profile: React.FC = () => {
@@ -20,6 +29,17 @@ const Profile: React.FC = () => {
   const [userLogged, setUserLogged] = useState<Usuario>();
   const [playlists, setPlaylists] = useState<Array<Playlist>>();
   const [filter, setFilter] = useState<string>("");
+  const [playlistSelected, setPlaylistSelected] = useState<Playlist>();
+  const [musicasNaPlaylist, setMusicasNaPlaylist] = useState<Array<PlaylistMusica>>();
+  const [musicaAtual, setMusicaAtual] = useState<number>(0);
+  const [musicaAtualDet, setMusicaAtualDet] = useState<Musica | null>(null);
+  const [artista, setArtista] = useState<string>();
+  const [descricao, setdescricao] = useState<string>();
+  const [musica, setmusica] = useState<string>("/Atomic Music.mp3");
+  const [nome, setnome] = useState<string>();
+  const [estilo, setEstilo] = useState<string>();
+  const [totalMusics, setTotalMusics] = useState<Array<Musica>>();
+  const [addMusic, setAddMusic] = useState<boolean>(false);
 
   const getPlaylists = () => {
     axios.get('http://localhost:4000/playlists')
@@ -27,6 +47,76 @@ const Profile: React.FC = () => {
         setPlaylists(res.data);
       });
   }
+
+  const getTotalMusics = () => {
+    axios.get('http://localhost:4000/musicas')
+      .then(res => {
+        setTotalMusics(res.data);
+        console.log("totalMusics");
+        console.log(totalMusics);
+      });
+  }
+
+  const getMusicsFromPlaylist = () => {
+    console.log('playlistSelected');
+    console.log(playlistSelected);
+    if (playlistSelected) {
+      axios.get(`http://localhost:4000/playlistMusica?playlistId=${playlistSelected.id}`)
+        .then(res => {
+          setMusicasNaPlaylist(res.data);
+        });
+    }
+  }
+
+  const getMusicInfo = () => {
+    if (musicasNaPlaylist && musicaAtual) {
+      axios.get(`http://localhost:4000/musicas/${musicasNaPlaylist[musicaAtual - 1].musicId}`)
+        .then(res => {
+          setMusicaAtualDet(res.data);
+        });
+    }
+  }
+
+  const nextSound = () => {
+    if (musicasNaPlaylist && musicaAtual && musicaAtual + 1 <= musicasNaPlaylist?.length)
+      setMusicaAtual(musicaAtual + 1);
+    else
+      setMusicaAtual(1);
+  }
+
+  const lastSound = () => {
+    if (musicasNaPlaylist && musicaAtual && musicaAtual - 1 > 0)
+      setMusicaAtual(musicaAtual - 1);
+    else
+      setMusicaAtual(musicasNaPlaylist?.length!);
+  }
+
+  useEffect(() => {
+    console.log('playlistSelected');
+    console.log(playlistSelected);
+    if (playlistSelected) {
+      setMusicaAtualDet(null);
+      setMusicaAtual(0);
+      getMusicsFromPlaylist();
+    }
+  }, [playlistSelected]);
+
+  useEffect(() => {
+    console.log('musicasNaPlaylist');
+    console.log(musicasNaPlaylist);
+    if (musicasNaPlaylist && musicasNaPlaylist.length > 0) {
+      setMusicaAtual(1);
+    }
+  }, [musicasNaPlaylist]);
+
+  useEffect(() => {
+    if (musicaAtual)
+      getMusicInfo();
+  }, [musicaAtual]);
+
+  useEffect(() => {
+    getTotalMusics();
+  }, [])
 
   useEffect(() => {
     let usuarioLogado = localStorage.getItem('user-logged-in');
@@ -41,46 +131,116 @@ const Profile: React.FC = () => {
   if (!isLogged && canChange) {
     return (<Redirect to='/signin' />);
   }
-  let id = 4;
-  const DeleteMusic = () => {
-    axios.delete('http://localhost:4000/playlists/musicas/1')
-    .then(resp => {
-      console.log(resp.data)
-    }).catch(error => {
-      console.log(error);
-    });
-  }
 
   return (
     <Container isLogged={!!userLogged}>
       <InnerContainer>
         <Title>
           Playlists do {userLogged?.nome}
-        </Title>
+        </Title><br/>
         <TextInput
-            id="outlined-basic"
-            label="Pesquisar música"
-            variant="outlined"
-            type="text" 
-            onChange={(e) => setFilter(e.target.value)} placeholder="Pesquisar"
-          />
+          id="outlined-basic"
+          label="Pesquisar por playlist"
+          variant="outlined"
+          type="text"
+          onChange={(e) => setFilter(e.target.value)} placeholder="Pesquisar"
+        />
         <PlaylistContainer>
           {
-            playlists && playlists?.map(p => (
-              <PlaylistDiv key={p.id}>
-                Playlist Id {p.id} de nome {p.nome} com a capa {p.capa}
-                {                  
-                  p.musicas && p.musicas.filter(w => w.nome.includes(filter)).map((m) =>
-                    <Musica>
-                      {m.nome} - {m.artista}<br/>
-                      <ReactAudioPlayer src={m.musica} controls /> <Button onClick={DeleteMusic}>Excluir Música da Playlist</Button>
-                    </Musica>
-                  )
-                }
+            playlists && playlists?.filter(w => w.nome.toLocaleLowerCase().includes(filter.toLocaleLowerCase())).map(p => (
+              <PlaylistDiv
+                key={p.id}
+                onClick={() => setPlaylistSelected(p)}
+                isSelected={(p === playlistSelected)}
+              >
+                Playlist de estilo {p.nome}
               </PlaylistDiv>
             ))
           }
         </PlaylistContainer>
+        {playlistSelected && (
+          <div>
+            <Title>
+              Músicas da playlist selecionada
+            </Title>
+            <Image src={add} onClick={() => {
+              setAddMusic(true);
+            }} alt="Adcionar Música a Playlist"
+            />
+            {addMusic &&
+              <DivNewMusic>
+                <TextInputMusic
+                  id="outlined-basic"
+                  label="Artista"
+                  variant="outlined"
+                  type="text"
+                  onChange={(e) => setArtista(e.target.value)}
+                />
+                <TextInputMusic
+                  id="outlined-basic"
+                  label="Estilo"
+                  variant="outlined"
+                  type="text"
+                  onChange={(e) => setEstilo(e.target.value)}
+                />
+                <TextInputMusic
+                  id="outlined-basic"
+                  label="Música"
+                  variant="outlined"
+                  type="text"
+                  onChange={(e) => setnome(e.target.value)}
+                />
+                <TextInputMusic
+                  id="outlined-basic"
+                  label="Descrição"
+                  variant="outlined"
+                  type="text"
+                  onChange={(e) => setdescricao(e.target.value)}
+                /><br/>
+                <Button onClick={() => {
+                  axios.post('http://localhost:4000/musicas', {
+                    artista: artista,
+                    descricao: descricao,
+                    musica: musica,
+                    nome: nome,
+                    estilo: estilo,
+                    capa: "",
+                  }).then(resp => {
+                    axios.post('http://localhost:4000/playlistMusica', {
+                      playlistId: playlistSelected.id,
+                      musicId: totalMusics?.length! + 1,
+                    }).finally(() => {
+                      getTotalMusics();
+                    });
+                    getMusicsFromPlaylist();
+                    setAddMusic(false);
+                  }).catch(error => {
+                    console.log(error);
+                  });
+                }}>Adcionar Música a Playlist</Button>
+              </DivNewMusic>}
+            {musicaAtualDet && (
+              <MusicaDiv>
+                <h2>Música {musicaAtualDet.nome} por {musicaAtualDet.artista} ({musicaAtual}/{musicasNaPlaylist?.length})</h2><br />
+                <Image src={backward} onClick={lastSound} alt="Voltar" />
+                <ReactAudioPlayer src={musicaAtualDet.musica} controls />
+                <Image src={forward} onClick={nextSound} alt="Avançar" />
+                <Image src={deleteMusic} onClick={() => {
+                  axios.delete('http://localhost:4000/playlistMusica/' + musicaAtualDet.id)
+                  .then(resp => {
+                    axios.delete('http://localhost:4000/musicas/' + musicaAtualDet.id)
+                    console.log(resp.data);
+                    setMusicaAtual(0);
+                    setMusicaAtualDet(null);
+                    getMusicsFromPlaylist();
+                  }).catch(error => {
+                    console.log(error);
+                  });
+                }} alt="Excluir Música da Playlist" />
+              </MusicaDiv>
+            )}
+          </div>
+        )}
       </InnerContainer>
     </Container>
   );
