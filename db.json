@@ -17,17 +17,17 @@
     {
       "id": 1,
       "nome": "Pop",
-      "capa": ""
+      "capa": "/popCapa.jpg"
     },
     {
       "id": 2,
       "nome": "Eletrônico",
-      "capa": ""
+      "capa": "/capaEletronica.jpg"
     },
     {
       "id": 3,
       "nome": "Rock",
-      "capa": ""
+      "capa": "/capaRock.jpg"
     }
   ],
   "playlistMusica": [

@@ -7,8 +7,6 @@ import backward from './assets/backward.png';
 import forward from './assets/forward.png';
 import deleteMusic from './assets/delete.png';
 import add from './assets/add.png';
-import Alert from '@material-ui/lab/Alert';
-import AlertTitle from '@material-ui/lab/AlertTitle';
 import {
   Container,
   InnerContainer,
@@ -20,7 +18,8 @@ import {
   Button,
   Image,
   TextInputMusic,
-  DivNewMusic
+  DivNewMusic,
+  CapaPlaylist
 } from './styles';
 
 const Profile: React.FC = () => {
@@ -154,6 +153,7 @@ const Profile: React.FC = () => {
                 isSelected={(p === playlistSelected)}
               >
                 Playlist de estilo {p.nome}
+                <CapaPlaylist src={p?.capa} alt="Capa da Playlist" />
               </PlaylistDiv>
             ))
           }

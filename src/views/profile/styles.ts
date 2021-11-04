@@ -19,10 +19,9 @@ export const Title = styled.h1`
 export const PlaylistContainer = styled.div`
     background-color: #efefef;
     margin: 10px 0;
-    padding: 5px;
     border: solid 1px #ccc;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 30px;
     `;
 
 interface PlaylistContainerProps {
@@ -31,15 +30,14 @@ interface PlaylistContainerProps {
 
 export const PlaylistDiv = styled.div.attrs((props: PlaylistContainerProps) => { })`
     background-color: ${props => props.isSelected ? '#1ed760' : '#fff'};
-    margin: 10px 0;
-    padding: 5px;
+    margin: 10px;
     border: solid 1px #ccc;
     border-radius: 3px;
     display: inline-block;
-    width: 500px;
-    height: 100px;
+    width: 300px;
+    height: 200px;
     cursor: pointer;
-    border-radius: 80px;
+    border-radius: 30px;
     font-size: 24px;
 `;
 
@@ -85,4 +83,12 @@ export const TextInputMusic = styled(TextField)`
 
 export const DivNewMusic = styled.div`
 
+`;
+
+export const CapaPlaylist = styled.img`
+  height: 200px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
 `;
