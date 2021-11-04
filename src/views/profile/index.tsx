@@ -36,7 +36,7 @@ const Profile: React.FC = () => {
   const [musicaAtualDet, setMusicaAtualDet] = useState<Musica | null>(null);
   const [artista, setArtista] = useState<string>();
   const [descricao, setdescricao] = useState<string>();
-  const [musica, setmusica] = useState<string>("https://www.youtube.com/watch?v=5qap5aO4i9A");
+  const [musica, setmusica] = useState<string>("/Atomic Music.mp3");
   const [nome, setnome] = useState<string>();
   const [estilo, setEstilo] = useState<string>();
   const [totalMusics, setTotalMusics] = useState<Array<Musica>>();
